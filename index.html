@@ -1,70 +1,28 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | GyroCam</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">GyroCam</div>
-      </div>
-    </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WEBGL PROJ.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/WEBGL PROJ.data",
-        frameworkUrl: buildUrl + "/WEBGL PROJ.framework.js",
-        codeUrl: buildUrl + "/WEBGL PROJ.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "GyroCam",
-        productVersion: "0.1",
-      };
+<html lang="en">
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Change_me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
-      } else {
-        canvas.style.width = "100%";
-        canvas.style.height = "100vh";
-      }
-      loadingBar.style.display = "block";
+<body>
+  
+<div class="container">
+  <video width="320" height="240" controls>
+  <source src="https://www.googleapis.com/drive/v3/files/1c0lfJQdjP3R3FHZruO3f5rn8-SemwP8O?alt=media&key=AIzaSyCAY-wLIs22t2fcsqoevswB5US8MTUEWoo" type="video/mp4">
+  
+Your browser does not support the video tag.
+</video>
+</div>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+<script>
+</script>
+
+</body>
 </html>
